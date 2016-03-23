@@ -2,10 +2,21 @@
 <html>
 <head>
     <title>angular model</title>
+    <style type="text/css">
+    body {
+        font-family: consolas;
+        font-size: 16px;
+    }
+    </style>
 </head>
 <body ng-app="app" ng-controller="AppCtrl">
 <h1>Proposals</h1>
-<p>{{proposals}}</p>
+<ul ng-repeat="p in proposals">
+    <li>project: {{p.name}}</li>
+    <li>revenue: {{p.revenue()}}</li>
+    <li>cost: {{p.cost()}}</li>
+    <li><strong>profit = </strong>{{p.profit()}}</li>
+</ul>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/lodash/dist/lodash.js"></script>
